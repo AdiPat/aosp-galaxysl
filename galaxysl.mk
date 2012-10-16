@@ -224,6 +224,25 @@ PRODUCT_COPY_FILES += $(foreach module,\
 	$(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/galaxysl/modules/*.ko)),\
 	$(module):system/lib/modules/$(notdir $(module)))
 
+# MISC Additional Stuff
+
+# OI File Manager 
+PRODUCT_PACKAGES += \
+    FileManager 
+# AOSP Bootanimation 
+PRODUCT_COPY_FILES += \
+    device/samsung/galaxysl/bootanimation.zip:system/media/bootanimation.zip 
+# Some Properties for my AOSP ROM
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.build.display.id=IMM76
+# Updated APN Config
+PRODUCT_COPY_FILES += \
+    device/samsung/galaxysl/apns-conf.xml:system/etc/apns-conf.xml
+# Apex Launcher, preferred.
+PRODUCT_COPY_FILES += \
+    device/samsung/galaxysl/launcher/apex.apk:system/app/apex.apk
+
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/galaxysl/kernel
 else
