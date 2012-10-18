@@ -240,7 +240,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/galaxysl/apns-conf.xml:system/etc/apns-conf.xml
 # Apex Launcher, preferred.
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxysl/launcher/apex.apk:system/app/apex.apk
+    device/samsung/galaxysl/prebuilt/apex.apk:system/app/apex.apk
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
