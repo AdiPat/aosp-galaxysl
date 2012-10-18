@@ -238,9 +238,14 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # Updated APN Config
 PRODUCT_COPY_FILES += \
     device/samsung/galaxysl/apns-conf.xml:system/etc/apns-conf.xml
-# Apex Launcher, preferred.
+# Apex Launcher, preferred. 
+# Copy SuperSU 
 PRODUCT_COPY_FILES += \
-    device/samsung/galaxysl/prebuilt/apex.apk:system/app/apex.apk
+    device/samsung/galaxysl/prebuilt/apex.apk:system/app/apex.apk \
+    device/samsung/galaxysl/prebuilt/Superuser.apk:system/app/Superuser.apk 
+# Use prebuilt make_ext4fs utility
+PRODUCT_COPY_FILES += \
+    device/samsung/galaxysl/prebuilt/make_ext4fs:utilities/make_ext4fs
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
